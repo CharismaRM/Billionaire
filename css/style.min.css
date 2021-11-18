@@ -962,6 +962,9 @@ body.ie ._ibg img {
   color: #fff;
   font-size: 14px;
 }
+.menu__link._active {
+  color: red;
+}
 
 .icon-menu {
   display: none;
@@ -1130,9 +1133,17 @@ body.ie ._ibg img {
     font-size: 16px;
   }
 }
+.main__btn_orange {
+  background: orangered;
+}
+.main__btn_orange:hover {
+  background: #010554;
+}
 .main__image {
   flex: 0 1 50%;
   z-index: 2;
+  position: relative;
+  animation: levitation 5s ease-in-out infinite alternate 0s forwards;
 }
 .main__image img {
   width: 600px;
@@ -1177,6 +1188,9 @@ body.ie ._ibg img {
 }
 .about__image {
   flex: 0 1 45%;
+  position: relative;
+  top: 0;
+  animation: levitation 5s ease-in-out infinite alternate 2s forwards;
 }
 .about__image img {
   width: 100%;
@@ -1209,6 +1223,13 @@ body.ie ._ibg img {
 .about__text {
   font-weight: 600;
   line-height: 150%;
+  transform: translate(0px, 100px);
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+}
+.about__text._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 @media (max-width: 767.98px) {
   .about__text {
@@ -1372,6 +1393,15 @@ body.ie ._ibg img {
     flex: 1 1 100%;
   }
 }
+.buy__item {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 767.98px) {
+  .buy__item {
+    align-items: center;
+  }
+}
 .buy__item > *:not(:last-child) {
   margin: 0px 0px 15px 0px;
 }
@@ -1420,11 +1450,17 @@ body.ie ._ibg img {
   background: url("../img/buy/three.png") 0 0 no-repeat;
 }
 .buy__image {
-  flex: 1 1 100%;
+  animation: levitation 5s ease-in-out infinite alternate 0s forwards;
 }
 @media (max-width: 991.98px) {
   .buy__image {
     margin: 30px 0px 0px 0px;
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 767.98px) {
+  .buy__image img {
+    width: 100%;
   }
 }
 
@@ -1456,14 +1492,17 @@ body.ie ._ibg img {
   line-height: 150%;
   letter-spacing: 0.02em;
   width: 150%;
+  transform: translate(0px, 100px);
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+}
+.item__text._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 @media (max-width: 767.98px) {
   .item__text {
     width: 100%;
-  }
-}
-@media (max-width: 767.98px) {
-  .item__text {
     text-align: center;
   }
 }
@@ -1481,6 +1520,14 @@ body.ie ._ibg img {
 @media (max-width: 991.98px) {
   .item:nth-child(1) .item__text {
     width: 100%;
+  }
+}
+.item__number {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .item__number {
+    display: block;
   }
 }
 
@@ -1571,5 +1618,14 @@ body.ie ._ibg img {
 @media (max-width: 767.98px) {
   .text {
     font-size: 16px;
+  }
+}
+
+@keyframes levitation {
+  0% {
+    transform: translate(0px, 50px);
+  }
+  100% {
+    transform: translate(0px, -50px);
   }
 }
