@@ -789,7 +789,7 @@ body.ie ._ibg img {
 }
 
 ._no-webp .page__main{
-  background: url("../img/main/bg.jpg") 0 0/cover no-repeat; }
+  background: url("../img/main/bg.jpg") 30%/cover no-repeat; }
 
 .page__main {
   padding: 100px 0px;
